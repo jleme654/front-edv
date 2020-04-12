@@ -11,6 +11,7 @@
           <thead>
             <tr>
               <th scope="col">Id</th>
+              <th scope="col">Dono</th>
               <th scope="col">Modelo</th>
               <th scope="col">Cor</th>
               <th scope="col">Preço</th>
@@ -20,6 +21,7 @@
           <tbody>
             <tr *ngFor="let car of cars">
               <td>{{car.id}}</td>
+              <td>{{car.owner}}</td>
               <td>{{car.model}}</td>
               <td>{{car.color}}</td>
               <td>{{car.price | currency}}</td>
