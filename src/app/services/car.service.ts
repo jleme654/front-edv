@@ -9,7 +9,7 @@ import { Car } from '../models/car';
 })
 export class CarService {
 
-  url = 'http://localhost:3000/cars'; // api rest fake
+  url = 'http://localhost:9098/edv/cars'; // api rest fake
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
