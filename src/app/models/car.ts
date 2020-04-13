@@ -5,4 +5,5 @@ export interface Car {
     color: string;
     price: number;
     database: number;
+    plate: string;
 }

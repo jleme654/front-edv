@@ -29,7 +29,7 @@ export class CarService {
 
   // Obtem um carro pelo id
   getCarById(id: number): Observable<Car> {
-    return this.httpClient.get<Car>(this.url + '/' + id)
+    return this.httpClient.get<Car>(this.url + '/get/' + id)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -47,7 +47,7 @@ export class CarService {
 
   // utualiza um carro
   updateCar(car: Car): Observable<Car> {
-    return this.httpClient.put<Car>(this.url + '/' + car.id, JSON.stringify(car), this.httpOptions)
+    return this.httpClient.put<Car>(this.url + '/update/' + car.id, JSON.stringify(car), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -56,7 +56,7 @@ export class CarService {
 
   // deleta um carro
   deleteCar(car: Car) {
-    return this.httpClient.delete<Car>(this.url + '/' + car.id, this.httpOptions)
+    return this.httpClient.delete<Car>(this.url + '/delete/' + car.id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
